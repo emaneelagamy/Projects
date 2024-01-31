@@ -1,17 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     const widgets = document.querySelectorAll('.task-item');    
-
-//     
-
-//     widgets.forEach(widget => {
-//         widget.addEventListener('dragstart', handleDragStart);
-//         widget.addEventListener('dragover', handleDragOver);
-//         widget.addEventListener('drop', handleDrop);
-//     });
-// });
-
-// let draggedElement = null;
-
+/// This function is to update the tasks number after each drag and drop event
 function updateTasksNumbers(){
     const todoTasks = document.querySelectorAll('.tasks-todo .tasks-list .task-item');
     const onprogressTasks = document.querySelectorAll('.tasks-onprogress .tasks-list .task-item');
@@ -25,39 +12,6 @@ function updateTasksNumbers(){
     document.querySelectorAll('.tasks-onprogress .tasks-numbers')[0].innerHTML = onprogressTasksNo;
     document.querySelectorAll('.tasks-done .tasks-numbers')[0].innerHTML = doneTasksNo;
 }
-
-// function handleDragStart(event) {
-//     draggedElement = event.currentTarget;
-//     draggedElement.classList.add('dragging');
-// }
-
-// function handleDragOver(event) {
-//     event.preventDefault();
-//     event.dataTransfer.dropEffect = 'move';
-// }
-
-// function handleDrop(event) {
-//     event.preventDefault();
-//     const targetElement = event.currentTarget;
-
-//     if (draggedElement && targetElement) {
-//         const parent = targetElement.parentNode;
-//         const targetIndex = Array.from(parent.children).indexOf(targetElement);
-//         const draggedIndex = Array.from(parent.children).indexOf(draggedElement);
-
-//         if (draggedIndex > targetIndex) {
-//             parent.insertBefore(draggedElement, targetElement);
-//         } else {
-//             parent.insertBefore(draggedElement, targetElement.nextSibling);
-//         }
-        
-//         draggedElement.classList.remove('dragging');
-
-//         // update the tasks list numbers
-//         updateTasksNumbers();
-//     }
-// }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const dashboardTodo = document.getElementById('todo-dashboard');
