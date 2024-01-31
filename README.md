@@ -5,7 +5,10 @@ To run this solution please use the following commands:
 2. npm install -g live-server
 3. live-server
 
-Note: the drag and drop in the dashboard feature is implemented using the sortableJs library, also the responsive implementation has been assumed since there's no designs for the responsive view.
+Notes: 
+1. The drag and drop in the dashboard feature is implemented using the sortableJs library.
+2. Responsive implementation has been assumed since there's no designs for the responsive view.
+3. Icons library used is Icomoon.
 
 This solution is tested on the following browsers:
 1. Microsoft Edge
