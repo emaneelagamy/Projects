@@ -56,11 +56,10 @@
                 border-radius: 1rem;
                 cursor: grab;
                 transition: transform 0.2s ease-in-out;
-                transition: all 0.3s;   
-                &.dragging{
-                    transform: scale(1.1);
-
-                }
+                &:hover{
+                    transition: all 0.3s;
+                    transform: rotateY(10deg);
+                }   
                 .priority-tag{
                     font-size: $font-extrasmall;
                     border-radius: 4px;
