@@ -1,0 +1,25 @@
+.dropdown-toggle{
+    &.primary{
+        background-color: $dropdown-filter-bg;
+        color: $dropdown-filter-txt;
+        font-size: $font-normal;
+        &::after{
+            content: none;
+        }
+        p{
+            display: inline;
+            margin-bottom: 0;
+            font-size: $font-normal;
+            @media screen and (max-width: 575px) {
+                display: none;
+            }
+        }
+    }
+    .icon-chevron-down{
+        font-size: $font-small;
+        margin-left: 10px;
+        @media screen and (max-width: 575px) {
+            display: none;
+        }
+    }
+}

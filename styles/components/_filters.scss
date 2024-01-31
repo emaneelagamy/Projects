@@ -1,0 +1,19 @@
+.vertical-separator{
+    border-right: $vertical-separator;
+    margin: 0 20px;
+}
+
+.grid-list-view{
+    .list-view, .grid-view{
+        padding: 5px 10px;
+        background-color: $filter-btn-bg;
+        border: none;
+        color: $filter-btn-icon;
+        font-size: $font-extrabig;
+        &.active{
+            background-color: $filter-btn-bg-active;
+            border-radius: 6px;
+            color: $filter-btn-icon-active;
+        }
+    }
+}

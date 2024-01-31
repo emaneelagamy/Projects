@@ -1,0 +1,113 @@
+//Primary Colors
+$primary-color-1: #0D062D;
+$primary-color-2: #787486;
+$primary-color-3: #625F6D;
+$primary-color-4: #ffffff;
+$primary-color-5: #DBDBDB;
+
+//Secondary-Colors
+$secondary-color-1: #5030E5;
+$secondary-color-2: #FFA500;
+$secondary-color-3: #8BC48A;
+$secondary-color-4: #76A5EA;
+$secondary-color-5: #E4CCFD;
+$secondary-color-6: #7AC555;
+$secondary-color-7: #68B266;
+$secondary-color-8: #83C29D;
+$secondary-color-9: #F5F5F5;
+$secondary-color-10: #E0E0E0;
+$secondary-color-11: #D58D49;
+$secondary-color-12: #D25B68;
+$secondary-color-13: #F4D7DA;
+$secondary-color-14: #C4C4C4;
+$secondary-color-15: #FBCB18;
+
+//Backgrounds
+$dashboard-bg: $primary-color-4;
+$side-bar-bg: transparent;
+$main-content-bg-responsive: rgba(0, 0, 0, 0.5);
+
+//Text Colors
+$main-text-color: $primary-color-2;
+
+//Side Bar Colors
+$side-bar-text: $primary-color-2;
+$side-bar-icon: $primary-color-2;
+$side-bar-text-hover: rgba(80, 48, 229, 0.08);
+$side-bar-toggle-bg: transparent;
+$side-bar-toggle: $primary-color-2;
+$side-bar-logo-txt: $primary-color-1;
+$side-bar-separator: $primary-color-5;
+$side-bar-bullet-point-green: $secondary-color-6;
+$side-bar-bullet-point-orange: $secondary-color-2;
+$side-bar-bullet-point-purple: $secondary-color-5;
+$side-bar-bullet-point-blue: $secondary-color-4;
+
+// Header Content Colors
+$header-search-bar-bg: $secondary-color-9;
+$header-search-bar-txt: $primary-color-2;
+$header-search-bar-icon: $primary-color-2;
+
+$header-calendar-icon: $primary-color-2;
+$header-help-icon: $primary-color-2;
+$header-notification-icon: $primary-color-2;
+
+$profile-user-name: $primary-color-1;
+$profile-user-location: $primary-color-2;
+
+// Page Content Colors
+$page-title: $primary-color-1;
+$heading-edit-btn-bg: #5030E533;
+$heading-edit-btn: $secondary-color-1;
+
+// dashboard
+$tasks-wrapper-bg: $secondary-color-9;
+$tasks-title-icon-todo: $secondary-color-1;
+$tasks-title-icon-onprogress: $secondary-color-2;
+$tasks-title-icon-done: $secondary-color-4;
+$tasks-title: $primary-color-1;
+$tasks-heading-border-todo: solid 3px $secondary-color-1;
+$tasks-heading-border-onprogress: solid 3px $secondary-color-2;
+$tasks-heading-border-done: solid 3px $secondary-color-3;
+$tasks-number-bg: $secondary-color-10;
+$tasks-number: $primary-color-3;
+$add-tasks-btn-bg: #5030E533;
+$add-tasks-btn: $secondary-color-1;
+
+$task-item-bg: $primary-color-4;
+$task-priority-tag-low-bg: #DFA87433;
+$task-priority-tag-low: $secondary-color-11;
+$task-priority-tag-high-bg: #D8727D1A;
+$task-priority-tag-high: $secondary-color-12;
+$task-priority-tag-completed-bg: #83C29D33;
+$task-priority-tag-completed: $secondary-color-8;
+$task-item-title: $primary-color-1;
+$task-item-desc: $primary-color-2;
+
+// Filters and Dropdown
+$dropdown-filter-bg: transparent;
+$dropdown-filter-txt: $primary-color-2;
+$filter-btn-bg-active: $secondary-color-1;
+$filter-btn-bg: transparent;
+$filter-btn-icon: $primary-color-2;
+$filter-btn-icon-active: $primary-color-4;
+
+// Separators
+$horizontal-separator: solid 1px $primary-color-5;
+$vertical-separator: solid 1px $primary-color-2;
+
+// Invite Members
+$invite-btn-bg: transparent;
+$invite-btn-icon: $secondary-color-1;
+$invite-btn-txt: $secondary-color-1;
+$members-num-txt: $secondary-color-12;
+$members-num-bg: $secondary-color-13;
+
+// Thoughts
+$thoughts-solid-bg: $secondary-color-9;
+$thoughts-lamp: $secondary-color-15;
+$thoughts-bg-gradient: #FCD64AB2;
+$thoughts-title: $primary-color-1;
+$thoughts-desc: $primary-color-2;
+$thoughts-btn-txt: $primary-color-1;
+$thoughts-btn-bg: $primary-color-4;

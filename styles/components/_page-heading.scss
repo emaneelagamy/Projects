@@ -1,0 +1,29 @@
+.content-wrapper{
+    .page-details{
+        position: relative;
+        flex-wrap: wrap;
+        @media screen and (max-width: 575px){
+            padding: 48px 15px 15px !important;
+        }
+        .section-left, .section-right{
+            @media screen and (max-width: 628px) {
+                margin-bottom: 20px;
+            }
+        }
+        .page-details-btn{
+            background-color: $heading-edit-btn-bg;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            .icon-pencil, .icon-link{
+                color: $heading-edit-btn;
+            }
+        }
+
+        .invite-members{
+            background-color: $invite-btn-bg;
+            border: none;
+            color: $invite-btn-txt;
+        }
+    }
+}

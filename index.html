@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="dist/main.css">
+    <title>My Dashboard</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="dist/main.js"></script>
+    <header>
+        <!--This section is for the implementation of the side menu-->
+            <div id="header-content">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="navbar-header d-flex col-sm-1 col-md-3 col-xl-3 col-xxl-2 justify-content-between align-items-center">
+                            <div class="d-flex">
+                                <figure>
+                                    <img src="assets/images/project-logo.svg" class="header-logo">
+                                </figure>
+                                <h3>Project M.</h3>
+                            </div>
+                            
+                            <button type="button" id="sidebarCollapse" class="btn btn-info mr-2">
+                                <i class="icon-double-arrow-left"></i>
+                            </button>
+                        </div>
+                        <!-- Search bar -->
+                        <button class="search-bar dropdown-toggle primary p-2"><i class="icon-search"></i></button>
+                        <form class="d-flex align-items-center col-sm-5 col-md-5 col-xl-3 col-xxl-3">
+                            <i class="icon-search"></i>
+                            <input class="form-control me-2 pl-5 py-2 border-0" type="search" placeholder="Search for anything..." aria-label="Search">
+                        </form>
+
+                        <!-- Menu Shortcuts -->
+                        <div class="collapse navbar-collapse col-sm-4 col-md-4 col-lg-3 col-xl-4 col-xxl-3 d-flex" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto d-flex justify-content-between flex-row">
+                                <li class="nav-item mr-3">
+                                    <i class="icon-calendar-2"></i>
+                                </li>
+                                <li class="nav-item mr-3">
+                                    <i class="icon-help"></i>
+                                </li>
+                                <li class="nav-item">
+                                    <i class="icon-notification"></i>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu justify-content-end"> 
+                                <li class="nav-item dropdown d-flex align-items-center">
+                                    <div class="user-details">
+                                        <div class="user-name">Anima Agrawal</div>
+                                        <div class="user-location">U.P, India</div>
+                                    </div>
+                                  <a class="nav-link dropdown-toggle py-0 pr-0 pl-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile-pic">
+                                        <img src="assets/images/profile-image.png" alt="Profile Picture">
+                                     </div>
+                                 <!-- You can also use icon as follows: -->
+                                   <!--  <i class="fas fa-user"></i> -->
+                                  </a>
+                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h fa-fw"></i> Account</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw"></i> Settings</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
+                                  </ul>
+                                </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    </header>
+
+    <main>
+        <!-- Sidebar  -->
+        <div id="main-content" class="col-12 d-flex">
+            <div class="sidebar-wrapper col-lg-3 col-xl-3 col-xxl-2 p-0">    
+                <nav id="sidebar">
+                    <ul class="list-unstyled components">
+                        <li>
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="icon-grid-icon"></i>
+                                <div>Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-message"></i>
+                                <div>Messages</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="icon-task-square"></i>
+                                <div>Tasks</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="icon-members"></i>
+                                <div>Members</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="icon-settings"></i>
+                                <div>Settings</div>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <div id="separator"></div>
+                    
+                    <ul class="list-unstyled pages mb-5">
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div>
+                                    <i class="icon-points green"></i>
+                                    Mobile App
+                                </div>
+                                <i class="icon-properties"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="icon-points orange"></i>
+                                    Website Redesign
+                                </div>
+                                <i class="icon-properties"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div>
+                                    <i class="icon-points purple"></i>
+                                    Design System
+                                </div>
+                                <i class="icon-properties"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div>
+                                    <i class="icon-points blue"></i>
+                                    Wireframes
+                                </div>
+                                <i class="icon-properties"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <section class="thoughts text-center pr-3 d-flex my-5">
+                        <div class="solid-bg">
+                            <div class="gradient-bg">
+                            </div>
+                        </div>
+                        <i class="icon-lamp-on"></i>
+                        <div class="idea">
+                            <div class="idea-title mb-2">Thoughts Time</div>
+                            <p class="idea-desc mb-3">We don’t have any notice for you, till then you can share your thoughts with your peers.</p>
+                            <button class="write-message">Write a Message</button>
+                        </div>
+                    </section>
+                </nav>
+            </div>
+            
+            <!--Main Page Content-->
+            <div class="content-wrapper col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10">
+                <section class="page-details d-flex justify-content-between pt-5 pb-4 px-4">
+                    <div class="section-left d-flex align-items-center">
+                        <h1 class="page-title mr-3">Mobile App</h1>
+                        <button class="page-details-btn mr-3"><i class="icon-pencil"></i></button>
+                        <button class="page-details-btn mr-3"><i class="icon-link"></i></button>
+                    </div>
+                    <div class="section-right d-flex align-items-center">
+                        <button class="invite-members">
+                            <i class="icon-add mr-1"></i>
+                            Invite
+                        </button>
+                        <ul class="members-list">
+                            <li class="member"><img src="assets/images/Ellipse 12.png"></li>
+                            <li class="member"><img src="assets/images/Ellipse 13.png"></li>
+                            <li class="member"><img src="assets/images/Ellipse 15.png"></li>
+                            <li class="member"><img src="assets/images/Ellipse 14.png"></li>
+                            <li class="member"><div class="members-num">+2</div>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="dashboard-wrapper">
+                    <div class="dashboard-filters d-flex col-12 pb-5 justify-content-between">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle primary mr-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icon-filter"></i>
+                              <p>Filter</p>
+                              <i class="icon-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+
+                            <button class="btn btn-secondary dropdown-toggle primary" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icon-calendar"></i>
+                              <p>Today</p>
+                              <i class="icon-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </div>
+                        <div class="share d-flex">
+                            <button class="btn btn-secondary dropdown-toggle primary">
+                                <i class="icon-members"></i>
+                                <p>Share</p>
+                            </button>
+                            <div class="vertical-separator"></div>
+                            <div class="grid-list-view">
+                                <button class="list-view active"><i class="icon-list"></i></button>
+                                <button class="grid-view"><i class="icon-grid2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-tasks w-100 d-inline-flex flex-wrap">
+                        <div class="tasks-todo px-2 py-2 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                            <div class="tasks-container px-4 py-2">
+                                <div class="tasks-heading todo d-flex justify-content-between py-4">
+                                    <div class="tasks-title d-flex align-items-normal">
+                                        <i class="icon-points purple mr-2"></i>
+                                        <h5 class="mb-0">To Do</h5>
+                                        <div class="tasks-numbers px-2 ml-3"></div>
+                                    </div>
+                                    
+                                    <div class="add-task"><i class="icon-add"></i></div>
+                                </div>
+                                
+                                <ul class="tasks-list my-4" id="todo-dashboard">
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 low">Low</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Brainstorming</div>
+                                        <div class="task-desc mt-2">Brainstorming brings team members' diverse experience into play.</div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 12.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 14.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 15.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+    
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 high">High</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Research</div>
+                                        <div class="task-desc mt-2">User research helps you to create an optimal product for users.</div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 13.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 16.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+    
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 high">High</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Wireframes</div>
+                                        <div class="task-desc mt-2">Low fidelity wireframes include the most basic content and visuals.</div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 12.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 14.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 15.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tasks-onprogress px-2 py-2 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                            <div class="tasks-container px-4 py-2">
+                                <div class="tasks-heading d-flex onprogress justify-content-between py-4">
+                                    <div class="tasks-title d-flex align-items-normal">
+                                        <i class="icon-points orange mr-2"></i>
+                                        <h5 class="mb-0">On Progress</h5>
+                                        <div class="tasks-numbers px-2 ml-3"></div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <ul class="tasks-list my-4" id="onprogress-dashboard">
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 low">Low</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Onboarding Illustrations</div>
+                                        <div class="task-one-image mt-2"><img src="assets/images/unsplash_MicqqGyDQ6w.png"></div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 14.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 15.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 12.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+    
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 low">Low</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Moodboard</div>
+                                        <div class="task-two-images mt-2 d-flex"><img src="assets/images/unsplash_BS_1XGRkIH4.png" class="mr-3"><img src="assets/images/unsplash_KIqJfzbII9w.png"></div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 15.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+
+                        <div class="tasks-done px-2 py-2 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                            <div class="tasks-container px-4 py-2">
+                                <div class="tasks-heading done d-flex justify-content-between py-4">
+                                    <div class="tasks-title d-flex align-items-normal">
+                                        <i class="icon-points blue mr-2"></i>
+                                        <h5 class="mb-0">Done</h5>
+                                        <div class="tasks-numbers px-2 ml-3"></div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <ul class="tasks-list my-4" id="done-dashboard">
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 completed">Completed</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Mobile App Design</div>
+                                        <div class="task-one-image mt-2"><img src="assets/images/Plant Care App (Dribbble shot) 1.png" class="w-100"></div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 16.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 14.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+    
+                                    <li class="task-item p-3 mb-4" draggable="true" ondrop="updateTasksNumbers()">
+                                        <div class="task-heading d-flex justify-content-between mb-2">
+                                            <div class="priority-tag p-1 completed">Completed</div>
+                                            <div class="properties"><i class="icon-properties"></i></div>
+                                        </div>
+                                        <div class="task-title">Design System</div>
+                                        <div class="task-desc mt-2">It just needs to adapt the UI from what you did before</div>
+                                        <div class="task-footer d-flex my-3 justify-content-between">
+                                            <ul class="task-assignee d-flex">
+                                                <li class="assignee"><img src="assets/images/Ellipse 12.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 14.png"></li>
+                                                <li class="assignee"><img src="assets/images/Ellipse 15.png"></li>
+                                            </ul>
+                                            <div class="d-flex col-5 justify-content-end px-0">
+                                                <div class="comments-num d-flex align-items-center mr-3">
+                                                    <i class="icon-message mr-2"></i>
+                                                    <p>12 </p>
+                                                    <p>comments</p>
+                                                </div>
+                                                <div class="files-num d-flex align-items-center">
+                                                    <i class="icon-folder mr-2"></i>
+                                                    <p>0 </p>
+                                                    <p>files</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        
+        
+    </main>
+    <footer></footer>
+</body>
+</html>

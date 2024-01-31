@@ -1,0 +1,57 @@
+.section-right{
+    position: relative;
+    .icon-add{
+        &::before{
+            border-radius: 6px;
+            background-color: $add-tasks-btn-bg;
+            color: $add-tasks-btn;
+            font-size: 10px;
+            padding: 5px;
+        }
+    }
+    .members-list{
+        position: relative;
+        width: 165px;
+        .member{
+            position: absolute;
+            top: -10px;
+            cursor: pointer;
+            &:hover{
+                transition: all 0.3s;
+                transform: scale(1.2);
+            }
+            &:first-child{
+                left: 0px;
+            }
+            &:nth-child(2){
+                left: 30px;
+            }
+            &:nth-child(3){
+                left: 60px;
+            }
+            &:nth-child(4){
+                left: 90px;
+            }
+            &:nth-child(5){
+                left: 120px;
+            }
+            img{
+                max-width: 38px;
+                min-width: 38px;
+                border-radius: 50%;
+                border: solid 1px white;
+            }   
+            .members-num{
+                padding: 9px;
+                background: $members-num-bg;
+                color: $members-num-txt;
+                border-radius: 50%;
+                max-height: 38px;
+                min-width: 38px;
+                font-size: $font-normal;
+                border: solid 1px white;
+            }
+        }
+    }
+}
+
