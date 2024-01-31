@@ -1,4 +1,4 @@
-This repo is for "My Dashboard" Demo, this is implemented using HTML, Css, and Javascript.
+This repo is for "My Dashboard" Demo, this is implemented using HTML, Sass, and Javascript.
 
 To run this solution please use the following commands:
 1. npm init                             //to install node_modules
