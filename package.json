@@ -1,13 +1,20 @@
 {
   "devDependencies": {
+    "autoprefixer": "^10.4.18",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "build:css": "node-sass styles/main.scss dist/main.css"
+    "build:css": "node-sass styles/main.scss dist/main.css",
+    "build-tailwind:css": "tailwindcss build -i styles/assets/styles.css -o assets/TailwindCss/styles.css -w"
+  },
+  "dependencies": {
+    "@aegov/design-system": "^2.1.1"
   }
 }
